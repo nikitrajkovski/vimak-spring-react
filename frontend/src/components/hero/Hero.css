@@ -1,0 +1,235 @@
+.wine-carousel-container {
+  background-color:#e6e5d8;
+  margin: auto;
+  max-width: 100%;
+}
+
+.wine-card-container {
+    max-width: 100%;
+    margin: auto;
+    background-color: #e6e5d8;
+    display: flex;
+    flex-basis: 70% 30%;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px;
+    height:500px;
+}
+
+.wine-card-container > div {
+  flex: 70%;
+}
+
+.wine-info {
+    max-width: 550px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.wine-poster {
+  width: 600px; 
+  height: 500px; 
+  overflow: hidden; /* Hide any overflow */
+  position: relative; /* Establish positioning context for absolute positioning */
+}
+
+.wine-poster > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* or contain, based on your preference */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.winfo {
+  text-align: left;
+}
+
+@media screen and (max-width: 400px) {
+    .wine-card-container{
+      flex-direction:column;
+    }
+  }
+
+.navBar {
+  max-width: 100%;
+  height: 5em;
+  background-color: #e6e5d8;
+  border-bottom: 3px solid black;
+  position:relative;
+}
+
+.navBar > div {
+  display: inline-block;
+}
+
+  .buttons {
+    float: right;
+    margin-right: 1.3em;
+    margin-top: 0.8em;
+  }
+
+.Logo{
+  position: absolute;
+  transform: scale(0.45);
+  height: 4em;
+  bottom: 96%;
+  right: 70%;
+  object-fit: contain;
+  float: left;
+}
+
+.Logo > img {
+  float: left;
+}
+
+.buttons > a {
+  font-size: 1.8em;
+  margin-left: 0.9em;
+  color:#8a0d0d;
+  text-decoration: none;
+}
+
+.buttons {
+  padding-top: 0.2em;
+}
+
+.white-wine {
+  color: #e2c365;
+  /* text-shadow: -0.8px 0 black, 0 0.8px black, 0.8px 0 black, 0 -0.8px black; */
+}
+
+.red-wine {
+  color: #bc4448;
+  /* text-shadow: -0.5px 0 black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black; */
+}
+
+.rose-wine {
+  color:#D46197;
+  /* text-shadow: -0.5px 0 black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black; */
+
+}
+
+.MuiButtonBase-root {
+  display: none;
+}
+
+.carousel-indicators {
+  display: none;
+}
+
+a:hover {
+  color:#ff0004;
+}
+
+#clic {
+  cursor:pointer;
+}
+
+.searchBar {
+  background-color: #e6e5d8;
+}
+
+.map {
+  height: 700px;
+  background-color: #e6e5d8;
+  display:block;
+}
+
+.searchBar {
+  width: 30%;
+  height: 600px;
+  display:inline-block;
+  float:left;
+  padding-top: 1.5em;
+}
+
+.delzamapa {
+  width:70%;
+  height:700px;
+  display:inline-block;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2.5em;
+  padding-left: 3em;
+}
+
+.searchBar {
+  max-width: 550px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #bc4448;
+  padding-top: 10em;
+}
+
+.vinarijai {
+  margin-top: 2em;
+}
+
+
+.footer {
+  max-width: 100%;
+  height: 10em;
+  background-color: #e6e5d8;
+  position:relative;
+}
+
+.f1 {
+  display: inline-block;
+  float:left;
+  width: 33%;
+  height: 10em;
+  padding-left: 1em;
+  color: #bc4448;
+}
+
+#kontakt {
+  margin-bottom: 2em;
+}
+
+.kf1 {
+  padding-left: 2em;
+  color: #bc4448;
+}
+
+
+.f3 {
+  display:inline-block;
+  float:right;
+  width:33%;
+  height: 10em;
+  align-items: center;
+  text-align:right;
+  padding-right: 1em;
+  color: #bc4448;
+}
+
+.f3 > div {
+  float: right;
+  width:100%;
+  
+}
+
+#politika {
+  padding-bottom: 4em;
+}
+
+.f2 {
+  display: inline-block;
+  width:33%;
+  height: 10em;
+}
+
+.f2Logo {
+  position: absolute;
+  transform: scale(0.45);
+  height: 0em;
+  left: 28.6em;
+  justify-content: center;
+  align-items: center;
+  object-fit: contain;
+}

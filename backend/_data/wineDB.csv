@@ -1,0 +1,46 @@
+wine_name,wine_type,grape_used,wine_year,wine_price,wine_rating,winery
+Alexandria,Red,Vranec,2018,630,3.9,Tikves
+"Tga za jug",Red,Vranec,2018,560,3.6,Tikves
+Smederevka,White,Smederevka,2019,160,3.4,Tikves
+Temjanika,White,Temjanika,2019,250,4,Tikves
+Barovo,Red,"Red Blend",2019,1800,4.3,Tikves
+Alexandria,Rose,"Pinot Noir",2022,630,3.7,Tikves
+Ubava,White,Temjanika,2022,510,3.8,Sopot
+"Merlot Delight",Red,Merlot,2014,920,4,Sopot
+Racin,White,Chardonnay,2020,470,3.9,Sopot
+"Brut Rose",Rose,"Pinot Noir",2015,2000,4.3,Sopot
+Vranec,Red,Vranec,2023,475,3.7,Stobi
+Acacia,White,Chardonnay,2021,950,3.9,Stobi
+Macedon,Rose,Syrah,2020,500,3.5,Stobi
+Muscat,White,Temjanika,2021,700,3.8,Bovin
+Chardonnay,White,Chardonnay,2020,720,3.6,Bovin
+Imperator,Red,Vranec,2018,1600,4.4,Bovin
+Alexandar,Red,"Red Blend",2019,700,3.9,Bovin
+Daron,Red,"Red Blend",2016,880,4.1,Bovin
+"Merlot & Cabernet Sauvignon","Dark Red",Merlot,2018,390,3.7,Ezimit
+"Terra Makedonika",Red,"Red Blend",2012,1900,4.2,Ezimit
+"Chardonnay Barrique",White,Chardonnay,2022,445,3.3,Ezimit
+Rose,Rose,"Pinot Noir",2023,400,3.9,Ezimit
+"Hermes Vranec","Dark Red",Vranec,2015,540,4.1,Dalvina
+Elegija,Rose,Syrah,2020,540,3.5,Dalvina
+"Chardonnay Barrique",White,Chardonnay,2014,800,3.6,Dalvina
+Terrior,"Dark Red",Vranec,2018,3840,4.5,Kamnik
+Carmenere,Red,Carmenere,2019,1400,4.3,Kamnik
+"Clos Vineyard",Red,"Pinot Noir",2021,870,4,Kamnik
+"Ten Barrels",Red,"Cabernet Sauvignon",2020,3000,4.5,Kamnik
+Luna,White,Chardonnay,2023,900,4.1,Popov
+"Cabernet Franc",Red,"Cabernet Franc",2019,720,3.8,Popov
+Kosharishte,Red,Carmenere,2017,875,4.3,Popov
+"Seven Numbers",White,Furmint,2019,610,3.9,"Puklavec Family Wines"
+"Instinct Super Premium",Red,Vranec,2019,610,4,"Puklavec Family Wines"
+"Jeruzalem Ormoz",White,Savuvigon,2020,430,3.9,"Puklavec Family Wines"
+"Estate Selection",White,"Sauvignon blanc",2017,440,3.8,"Puklavec Family Wines"
+"Makedonsko Belo",White,N/A,2020,600,0,Movino
+Vranec,Red,Vranec,2019,610,0,Movino
+Koria,White,Temjanika,2021,610,4.1,Venec
+Orle,Red,Vranec,2018,830,4.1,Venec
+"Single Block",White,Traminec,2021,470,3.9,Venec
+"Disan Valley",White,"Pinot Grigio",2020,500,3.8,Venec
+"Chardonnay 2021",White,Chardonnay,2021,450,3.6,"GD Tikves"
+Vranec,Red,Vranec,2019,480,3.6,"GD Tikves"
+"Muscat Rose",Rose,"Black Muscat",2020,500,3.9,"GD Tikves"
