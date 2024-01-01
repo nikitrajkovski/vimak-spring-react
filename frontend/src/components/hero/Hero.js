@@ -32,6 +32,7 @@ const Hero = ({ wines }) => {
   const [winery, setWinery] = useState("");
   const [userLocation, setUserLocation] = useState("");
   const [userDistance, setUserDistance] = useState(null);
+  const [loadingLocation, setLoadingLocation] = useState(true);
 
 
   const fetchVine = async (id, wineryLocation) => {
@@ -40,7 +41,7 @@ const Hero = ({ wines }) => {
         const response = await api.get(`/api/v1/winery/${id}`);
         const selectedWinery = response.data;
         setWinery(selectedWinery);
-
+        console.log(selectedWinery)
         console.log('User Location:', userLocation);
         console.log('Winery Location:', wineryLocation);
 
@@ -54,7 +55,7 @@ const Hero = ({ wines }) => {
     }
 
 
-    useEffect(()=> {
+    useEffect(() => {
       if (navigator && navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
           (position) => {
@@ -62,14 +63,20 @@ const Hero = ({ wines }) => {
               lat: position.coords.latitude,
               lng: position.coords.longitude,
             };
-            setUserLocation(location); 
-                  },
+            setUserLocation(location);
+            setLoadingLocation(false); // Set loading to false once location is retrieved
+          },
           (error) => {
-            console.error("Error getting user location:", error); //drug komentar
+            console.error("Error getting user location:", error);
+            setLoadingLocation(false); // Set loading to false in case of error
           }
         );
       }
     }, []);
+
+    if (loadingLocation) {
+      return <div>Loading...</div>;
+    }
 
 const calculateDistance = (from, to) => {
   const distanceInMeters = getDistance(from, to);

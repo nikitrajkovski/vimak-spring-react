@@ -8,7 +8,7 @@ import Navbar from './hero/navbar'
 import './Login.css'
 import Logo from './hero/Logo'
 
-const LOGIN_URL="http://localhost:8090/api/auth/signup"
+const LOGIN_URL="http://localhost:8090/api/auth/signup" //register
 export default function Logout() {
 
     const [username, setUsername] = useState('')
@@ -66,7 +66,7 @@ export default function Logout() {
                         <label for="email">Email</label>
                         <input
                             type="text"
-                            id="password"
+                            id="email"
                             value={email}
                             onChange={(e) => SetEmail(e.target.value)}
                             placeholder="Enter your email"
@@ -90,7 +90,6 @@ export default function Logout() {
                 </div>
                 
             </div>
-            
             <div className="footer">
                 
                     <div className="f1">

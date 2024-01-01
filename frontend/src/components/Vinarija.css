@@ -1,0 +1,32 @@
+.winery-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 1em;
+    padding-left: 2em;
+    padding-right: 1em;
+  }
+  
+  .winery-card-col {
+    margin-bottom: 20px;
+  }
+  
+  .winery-card {
+    width: 100%;
+  }
+  
+  .winery-card-img {
+    height: 200px;
+    object-fit: contain;
+    background-color: whitesmoke;
+}
+  
+  .winery-card-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .background {
+    background-color:#e6e5d8;
+  }
+  

@@ -8,19 +8,26 @@ import Login from './components/Login';
 import Navbar from './components/hero/navbar'
 import Register from './components/Register';
 import Wines from './components/Vina'
+import Wineries from './components/Vinarija'
+import Cart from './components/Cart'
+import { AuthProvider } from './components/authentication/AuthContext';
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    
+    <AuthProvider>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App /> }/>
         <Route path="/login" element={<Login /> }/>
         <Route path="/register" element={<Register/>}/>
         <Route path="/wines" element={<Wines/>}/>
+        <Route path="/wineries" element={<Wineries/>}/>
+        <Route path="/cart" element={<Cart/>}/>
       </Routes>
     </BrowserRouter>
+    </AuthProvider>
   </React.StrictMode>
 );

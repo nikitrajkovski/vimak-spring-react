@@ -9,6 +9,7 @@ import Register from './components/Register';
 import Wines from './components/Vina'
 
 
+
 function App() {
   
  
@@ -34,15 +35,19 @@ function App() {
 
   return (
     <div className="App">
-      
+              {/* <AuthProvider> */}
+
       <Routes>
+        
       <Route path="/" element={<Layout />}>
             <Route path="/" element={<Home wines={wines} />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register/>}/>
             <Route path="/wines" element={<Wines/>}/>
         </Route>
+        
       </Routes> 
+      {/* </AuthProvider> */}
 
     </div>
   );
