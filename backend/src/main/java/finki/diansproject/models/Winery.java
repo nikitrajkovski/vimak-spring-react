@@ -20,4 +20,5 @@ public class Winery {
     private double winery_rating;
     private String most_popular_wine;
     private String most_bought_wine;
+    private String url;
 }

@@ -40,11 +40,6 @@ public class WebSecurityConfig { // extends WebSecurityConfigurerAdapter {
         return new AuthTokenFilter();
     }
 
-    private static final String[] AUTH_WHITELIST = {
-            // -- Swagger UI v2
-            "/api/v1/wines",
-            "/api/v1/winery"
-    };
 
 //  @Override
 //  public void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
@@ -116,4 +111,5 @@ public class WebSecurityConfig { // extends WebSecurityConfigurerAdapter {
 
         return http.build();
     }
+
 }
