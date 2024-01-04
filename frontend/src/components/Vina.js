@@ -10,6 +10,21 @@ import Logo from './hero/Logo'
 export default function Vina() {
   const [wines, setWines] = useState([]);
 
+  const addToCart = async (idtest) => {
+    console.log(idtest)
+    const stringId = idtest.toString(); // Convert ObjectId to String
+    console.log(stringId)
+    api.post(`/api/v1/shopping-cart/add-product/659445cce9df798da9817616/${stringId}`)
+    .then(function (response) {
+        console.log(response);
+        alert("Успешно додадовте вино во корпата")
+    })
+    .catch(function (error) {
+        console.log(error);
+    });
+}
+
+
   const getWines = async () => {
     try {
       const response = await api.get("/api/v1/wines");
@@ -44,7 +59,7 @@ export default function Vina() {
                     <Card.Text>
                       Цена: {wine.wine_price}ден.
                     </Card.Text>
-                    <Button variant="primary" className="wine-card-button" >
+                    <Button variant="primary" className="wine-card-button" onClick={() => addToCart(wine.id)}>
                       Додај во корпа
                     </Button>
                   </Card.Body>

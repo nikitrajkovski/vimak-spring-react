@@ -5,7 +5,7 @@ import {useNavigate} from 'react-router-dom'
 import {useState, useEffect} from 'react'
 import classNames from 'classnames';
 import Navbar from './hero/navbar'
-import './Login.css'
+import './Login.css';
 import Logo from './hero/Logo'
 import { useAuth } from './authentication/AuthContext';
 
@@ -24,6 +24,7 @@ export default function Login() {
 
 
         try {
+            //made new changes
             // const response = await axios.post(
             //     LOGIN_URL,
             //     { username, password },
@@ -54,8 +55,9 @@ export default function Login() {
         <div id='login'>
             <Navbar/>
             <div className='celastrana'>        
-                <div class="container1">
-                <form onSubmit={(e) => handleLoginSubmit(e)} className="login-form">                        <div className="form-group">
+                <div className="loginwindow">
+                <form onSubmit={(e) => handleLoginSubmit(e)} className="login-form">                        
+                <div className="form-group">
                         <label htmlFor="username">Username</label>
                         <input
                             type="text"
@@ -83,14 +85,12 @@ export default function Login() {
                             required
                         />
                         </div>
-                        <button type="submit" class="btn formButton">Login</button>
+                        <button type="submit" className="btn formButton">Login</button>
                     </form>
                 </div>
-                <hr/>
 
             </div>
-            <hr/>
-            <div className="footer">
+            <div className="footer" style={{borderTop:"1px solid grey"}}>
                     <div className="f1">
                         <div id="kontakt">Контакт:</div>
                         <div className='kf1'>Е-пошта: vimak@vimak.com</div>

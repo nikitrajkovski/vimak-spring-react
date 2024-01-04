@@ -1,0 +1,13 @@
+.product-description-styling{
+    display: flex;
+    margin-top: 20px;
+    width:280px;
+}
+.inner-content-styling
+{
+    display:flex;
+    gap:10px;
+}
+.title{
+    font-weight: 600;
+}

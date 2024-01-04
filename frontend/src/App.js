@@ -7,7 +7,7 @@ import Home from './components/home/Home';
 import Login from './components/Login';
 import Register from './components/Register';
 import Wines from './components/Vina'
-
+import ShoppingCart from './components/shopping-cart/shoppingCart'
 
 
 function App() {
@@ -44,6 +44,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register/>}/>
             <Route path="/wines" element={<Wines/>}/>
+            <Route path="/shopping-cart" element={<ShoppingCart/>}/>
         </Route>
         
       </Routes> 

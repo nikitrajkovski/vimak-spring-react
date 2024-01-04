@@ -7,7 +7,7 @@
   }
 
 
-  .container1 {
+  .loginwindow {
     background-color:#e6e5d8;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -23,13 +23,8 @@
   .login-form {
     display: flex;
     flex-direction: column;
-    
   }
-  
-  hr {
-    margin: 0;
-    padding: 0;
-  }
+
   .form-group {
     margin-bottom: 20px;
   }
@@ -61,4 +56,10 @@
   
   .btn:hover {
     background-color: #2980b9;
+  }
+
+  hr {
+    margin:0;
+    padding: 0;
+    background-color: #e6e5d8;
   }

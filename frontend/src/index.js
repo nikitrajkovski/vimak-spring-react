@@ -9,7 +9,7 @@ import Navbar from './components/hero/navbar'
 import Register from './components/Register';
 import Wines from './components/Vina'
 import Wineries from './components/Vinarija'
-import Cart from './components/Cart'
+import ShoppingCart from './components/shopping-cart/shoppingCart'
 import { AuthProvider } from './components/authentication/AuthContext';
 
 
@@ -25,7 +25,7 @@ root.render(
         <Route path="/register" element={<Register/>}/>
         <Route path="/wines" element={<Wines/>}/>
         <Route path="/wineries" element={<Wineries/>}/>
-        <Route path="/cart" element={<Cart/>}/>
+        <Route path="/shopping-cart" element={<ShoppingCart/>}/>
       </Routes>
     </BrowserRouter>
     </AuthProvider>

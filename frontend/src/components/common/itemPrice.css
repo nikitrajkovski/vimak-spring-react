@@ -1,0 +1,12 @@
+.item-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.name-style{
+    padding-left: 60px;
+}
+.price-style{
+    padding-right: 35px;
+}

@@ -1,0 +1,21 @@
+.counter-styling{
+    border:2px solid gray;
+    border-radius: 10px;
+    display:flex;
+    width:fit-content;
+    height: fit-content;
+    align-items: center;
+    justify-content: center;
+    gap:10px;
+    padding:0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin:0px
+}
+p{
+    height: 10px;
+}
+button{
+    border:none;
+    background-color: transparent;
+}

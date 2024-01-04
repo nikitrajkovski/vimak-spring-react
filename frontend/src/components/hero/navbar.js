@@ -28,9 +28,7 @@ export default function Navbar() {
         )}
         <Link to='/wines'>Вина</Link>
         <Link to='/wineries'>Винарии</Link>
-        <a id='clic' href='https://www.youtube.com/'>
-          <FontAwesomeIcon icon={faCartShopping} />
-        </a>
+        <Link to='/shopping-cart'><FontAwesomeIcon icon={faCartShopping} /></Link>
       </div>
     </div>
   );

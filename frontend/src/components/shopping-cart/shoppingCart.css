@@ -1,0 +1,28 @@
+.shopping-cart-component-wrapper-styling{
+    background-color: lightgray;
+}
+.shoping-cart-wrapper-styling{
+    max-width: 800px;
+margin:auto;
+border-radius: 8px;
+border:2px solid gray;
+box-shadow: 4px 6px 5px 0px rgba(191,191,191,0.75);
+-webkit-box-shadow: 4px 6px 5px 0px rgba(191,191,191,0.75);
+-moz-box-shadow: 4px 6px 5px 0px rgba(191,191,191,0.75);
+margin-top: 30px;
+}
+.button-styling{
+    background-color: aquamarine;
+    padding:10px;
+    border-radius: 10px;
+}
+.buttons-wrapper{
+    display:flex;
+    flex-direction: column;
+    gap:20px;
+    margin:10px;
+    width: 90%;
+    margin:auto;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}

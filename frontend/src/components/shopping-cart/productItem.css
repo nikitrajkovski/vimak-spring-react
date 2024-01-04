@@ -1,0 +1,13 @@
+.product-item-wrapper{
+    background-color: beige;
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    max-width: 800px;
+    margin:auto;
+    padding-bottom: 15px;
+}
+.trash-styling{
+    width:30px;
+    height:30px
+}
