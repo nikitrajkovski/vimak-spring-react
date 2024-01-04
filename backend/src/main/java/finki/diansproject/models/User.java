@@ -29,6 +29,17 @@ public class User {
     @Size(max = 120)
     private String password;
 
+    public ShoppingCart getShoppingCart() {
+        return shoppingCart;
+    }
+
+    public void setShoppingCart(ShoppingCart shoppingCart) {
+        this.shoppingCart = shoppingCart;
+    }
+
+    @DBRef
+    private ShoppingCart shoppingCart;
+
     @DBRef
     private Set<Role> roles = new HashSet<>();
 

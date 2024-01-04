@@ -13,7 +13,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @NoArgsConstructor
 public class Wine {
     @Id
-    private ObjectId id;
+    private String id;
     private String wine_name;
     private String wine_type;
     private String grape_used;
