@@ -10,6 +10,7 @@ box-shadow: 4px 6px 5px 0px rgba(191,191,191,0.75);
 -webkit-box-shadow: 4px 6px 5px 0px rgba(191,191,191,0.75);
 -moz-box-shadow: 4px 6px 5px 0px rgba(191,191,191,0.75);
 margin-top: 30px;
+margin-bottom:30px;
 }
 .button-styling{
     background-color: aquamarine;

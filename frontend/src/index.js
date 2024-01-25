@@ -11,6 +11,7 @@ import Wines from './components/Vina'
 import Wineries from './components/Vinarija'
 import ShoppingCart from './components/shopping-cart/shoppingCart'
 import { AuthProvider } from './components/authentication/AuthContext';
+import Footer from './components/fragments/footer'
 
 
 
@@ -27,6 +28,7 @@ root.render(
         <Route path="/wineries" element={<Wineries/>}/>
         <Route path="/shopping-cart" element={<ShoppingCart/>}/>
       </Routes>
+      <Footer/>
     </BrowserRouter>
     </AuthProvider>
   </React.StrictMode>

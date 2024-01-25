@@ -8,8 +8,7 @@ import {APIProvider, Map, AdvancedMarker, Pin, InfoWindow} from '@vis.gl/react-g
 import {useState, useEffect} from 'react'
 import api from '../../api/axiosConfig';
 import Geolib, { getDistance, convertDistance } from 'geolib';
-import Najavabar from './najavabar.js'
-
+import Footer from '../fragments/footer.js'
 
 const Hero = ({ wines }) => {
 
@@ -252,27 +251,7 @@ const calculateDistance = (from, to) => {
 
             </div>
             <hr/>
-            <div className="footer">
-                    <div className="f1">
-                        <div id="kontakt">Контакт:</div>
-                        <div className='kf1'>Е-пошта: vimak@vimak.com</div>
-                        <div className='kf1'>Телефон: 070/000-000</div>
-                        <br></br>
-                        <div>Сите права се задржани</div>
-                    </div>
-                    <div className="f2">
-                      <div className='f2Logo'>
-                            <Logo/>
-                          </div>
-                    </div>
-                    <div className="f3">
-                    <br/>
-                        <div id="politika">Политика на приватност</div>
-                        <div>Услови за купување</div>
-                    </div>
-                </div>
-    </div>
-    
+        </div>
   );
 };
 
