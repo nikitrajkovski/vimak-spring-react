@@ -4,7 +4,7 @@ export default function ItemPrice(props){
     return(
         <div className="item-wrapper">
         <p className='name-style'>{name}</p>
-        <p className='price-style'>${price}</p>
+        <p className='price-style'>{price}ден.</p>
     </div>
     )
 }

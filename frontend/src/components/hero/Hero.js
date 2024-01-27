@@ -40,13 +40,10 @@ const Hero = ({ wines }) => {
         const response = await api.get(`/api/v1/winery/${id}`);
         const selectedWinery = response.data;
         setWinery(selectedWinery);
-        console.log(selectedWinery)
-        console.log('User Location:', userLocation);
-        console.log('Winery Location:', wineryLocation);
+
 
         const distance = calculateDistance(userLocation, wineryLocation);
         setUserDistance(distance);
-        console.log(distance);
       } 
       catch(err) {
         console.log(err);

@@ -9,6 +9,21 @@ import Register from './components/Register';
 import Wines from './components/Vina'
 import ShoppingCart from './components/shopping-cart/shoppingCart'
 
+import axios from 'axios';
+
+
+axios.interceptors.request.use(
+  config => {
+      const accessToken = localStorage.getItem('accessToken');
+      if (accessToken) {
+          config.headers.Authorization = `Bearer ${accessToken}`;
+      }
+      return config;
+  },
+  error => {
+      return Promise.reject(error);
+  }
+);
 
 function App() {
   
@@ -19,7 +34,6 @@ function App() {
     try {
       const response = await api.get("/api/v1/wines");
 
-      console.log(response.data);
 
       setWines(response.data);
 

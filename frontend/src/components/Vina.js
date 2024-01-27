@@ -4,24 +4,33 @@ import React from 'react';
 import { Card, Button, Container, Row, Col } from 'react-bootstrap';
 import './Vina.css'; 
 import Navbar from './hero/navbar'
-import Logo from './hero/Logo'
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from './authentication/AuthContext';
 
 
 export default function Vina() {
   const [wines, setWines] = useState([]);
+  const { authenticated } = useAuth();
+  const navigate = useNavigate();
 
   const addToCart = async (idtest) => {
-    console.log(idtest)
-    const stringId = idtest.toString(); // Convert ObjectId to String
-    console.log(stringId)
-    api.post(`/api/v1/shopping-cart/add-product/659445cce9df798da9817616/${stringId}`)
-    .then(function (response) {
-        console.log(response);
-        alert("Успешно додадовте вино во корпата")
-    })
-    .catch(function (error) {
-        console.log(error);
-    });
+    if (!authenticated) {
+      navigate('/login'); 
+      return;
+    } else {
+        console.log(idtest)
+        const stringId = idtest.toString(); // Convert ObjectId to String
+        console.log(stringId)
+        api.post(`/api/v1/shopping-cart/add-product/659445cce9df798da9817616/${stringId}`)
+        .then(function (response) {
+            console.log(response);
+            alert("Успешно додадовте вино во корпата")
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+    }
+    
 }
 
 

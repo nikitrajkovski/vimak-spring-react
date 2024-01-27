@@ -6,7 +6,9 @@ import axios from 'axios';
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-    const [authenticated, setAuthenticated] = useState(false);
+    const [authenticated, setAuthenticated] = useState(
+        localStorage.getItem('accessToken') ? true : false
+    );
 
     const login = async (username, password) => {
         try {

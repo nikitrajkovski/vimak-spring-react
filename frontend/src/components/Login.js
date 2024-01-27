@@ -64,7 +64,6 @@ export default function Login() {
                             id="username"
                             value={username}
                             onChange={(e) =>{
-                                console.log('Username changed:', e.target.value);
                                 setUsername(e.target.value)}
                             } 
                             placeholder="Enter your username"
@@ -78,7 +77,6 @@ export default function Login() {
                             id="password"
                             value={password}
                             onChange={(e) => {
-                                console.log('Password changed:', e.target.value);
                                 setPassword(e.target.value)}
                             }
                             placeholder="Enter your password"
