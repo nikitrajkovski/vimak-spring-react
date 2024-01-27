@@ -17,7 +17,7 @@ public class ShoppingCartService {
     private final WineRepository wineRepository;
 
     public ShoppingCartService(ShoppingCartRepository shoppingCartRepository, WineRepository wineRepository) {
-        this.shoppingCartRepository = shoppingCartRepository;
+        this.shoppingCartRepository = shoppingCartRepository; //changes
         this.wineRepository = wineRepository;
     }
 
