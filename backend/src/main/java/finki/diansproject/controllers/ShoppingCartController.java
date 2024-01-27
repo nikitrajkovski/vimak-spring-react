@@ -35,4 +35,11 @@ public class ShoppingCartController {
 
         return new ResponseEntity<ShoppingCart>(shoppingCartService.deleteItemFromShoppingCart(shoppingCartId,wineId), HttpStatus.OK);
     }
+
+    @PostMapping("/clear/{shoppingCartId}")
+    public ResponseEntity<ShoppingCart> clearShoppingCart(@PathVariable String shoppingCartId) {
+
+        return new ResponseEntity<ShoppingCart>(shoppingCartService.clearItemsFromShoppingCart(shoppingCartId), HttpStatus.OK);
+
+    }
 }

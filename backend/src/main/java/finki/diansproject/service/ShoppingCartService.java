@@ -44,4 +44,12 @@ public class ShoppingCartService {
         shoppingCartRepository.save(shoppingCart);
         return this.getShoppingCartProducts(shoppingCartId);
     }
+
+    public ShoppingCart clearItemsFromShoppingCart(String shoppingCartId) {
+        ShoppingCart shoppingCart = shoppingCartRepository.findById(shoppingCartId)
+                .orElseThrow(() -> new ShoppingCartNotFoundException("ShoppingCart not found"));
+
+        shoppingCart.getWines().clear();
+        return shoppingCartRepository.save(shoppingCart);
+    }
 }
