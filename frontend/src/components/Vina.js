@@ -21,7 +21,9 @@ export default function Vina() {
         console.log(idtest)
         const stringId = idtest.toString(); // Convert ObjectId to String
         console.log(stringId)
-        api.post(`/api/v1/shopping-cart/add-product/659445cce9df798da9817616/${stringId}`)
+        const cartid = localStorage.getItem("cartid")
+        console.log(cartid)
+        api.post(`/api/v1/shopping-cart/add-product/${cartid}/${stringId}`)
         .then(function (response) {
             console.log(response);
             alert("Успешно додадовте вино во корпата")

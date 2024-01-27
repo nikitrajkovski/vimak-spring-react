@@ -20,10 +20,14 @@ export const AuthProvider = ({ children }) => {
             );
 
             const accessToken = response.data.accessToken;
+            const cartid = response.data.cartid;
 
             if (accessToken) {
                 setAuthenticated(true);
+                console.log(response.data)
                 localStorage.setItem('accessToken', accessToken);
+                localStorage.setItem('cartid', cartid);
+                console.log(response.data.cartid)
             } else {
                 throw new Error('Invalid credentials');
             }
@@ -42,10 +46,11 @@ export const AuthProvider = ({ children }) => {
                 withCredentials: true,
             });
 
-            setAuthenticated(false);
+            
             // Remove the token from storage
-            localStorage.removeItem('accessToken');
             window.location.reload();
+            localStorage.removeItem('accessToken');
+            setAuthenticated(false);
 
         } catch (error) {
             console.error('Logout error:', error);
