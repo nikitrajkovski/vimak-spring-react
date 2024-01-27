@@ -1,12 +1,14 @@
 package finki.diansproject.controllers;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import finki.diansproject.models.ShoppingCart;
+import finki.diansproject.models.*;
 import finki.diansproject.payload.response.JwtResponse;
+import finki.diansproject.repository.ShoppingCartRepository;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
@@ -26,9 +28,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import finki.diansproject.models.ERole;
-import finki.diansproject.models.Role;
-import finki.diansproject.models.User;
 import finki.diansproject.payload.request.LoginRequest;
 import finki.diansproject.payload.request.SignupRequest;
 import finki.diansproject.payload.response.UserInfoResponse;
@@ -59,6 +58,9 @@ public class AuthController {
     @Autowired
     JwtUtils jwtUtils;
 
+    @Autowired
+    ShoppingCartRepository shoppingCartRepository;
+
 
 
     @PostMapping("/signin")
@@ -76,15 +78,19 @@ public class AuthController {
 
         String jwt = jwtUtils.generateJwtToken(authentication);
 
+
         List<String> roles = userDetails.getAuthorities().stream()
                 .map(item -> item.getAuthority())
                 .collect(Collectors.toList());
+
+        String cartid = userDetails.getShoppingCart().getId();
 
         return ResponseEntity.ok(new JwtResponse(jwt,
                 userDetails.getId(),
                 userDetails.getUsername(),
                 userDetails.getEmail(),
-                roles));
+                cartid,roles
+                ));
     }
 
     @PostMapping("/signup")
@@ -103,9 +109,20 @@ public class AuthController {
         }
 
         // Create new user's account
+        ShoppingCart shoppingCart = new ShoppingCart();
+        int i=0;
+        shoppingCart.setName("Cart" + i++);
+        List<Wine> wines = new ArrayList<>();
+        shoppingCart.setWines(wines);
+        shoppingCart.setStatus(true);
+
+        shoppingCartRepository.save(shoppingCart);
         User user = new User(signUpRequest.getUsername(),
                 signUpRequest.getEmail(),
-                encoder.encode(signUpRequest.getPassword()));
+                encoder.encode(signUpRequest.getPassword()),
+                shoppingCart);
+
+        user.setShoppingCart(shoppingCart);
 
         Set<String> strRoles = signUpRequest.getRoles();
         Set<Role> roles = new HashSet<>();

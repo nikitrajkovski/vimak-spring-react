@@ -5,6 +5,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
+import finki.diansproject.models.ShoppingCart;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -24,15 +27,20 @@ public class UserDetailsImpl implements UserDetails {
     @JsonIgnore
     private String password;
 
+    @Getter
+    @Setter
+    private ShoppingCart shoppingCart;
+
     private Collection<? extends GrantedAuthority> authorities;
 
     public UserDetailsImpl(String id, String username, String email, String password,
-                           Collection<? extends GrantedAuthority> authorities) {
+                           Collection<? extends GrantedAuthority> authorities, ShoppingCart shoppingCart) {
         this.id = id;
         this.username = username;
         this.email = email;
         this.password = password;
         this.authorities = authorities;
+        this.shoppingCart = shoppingCart;
     }
 
     public static UserDetailsImpl build(User user) {
@@ -45,7 +53,7 @@ public class UserDetailsImpl implements UserDetails {
                 user.getUsername(),
                 user.getEmail(),
                 user.getPassword(),
-                authorities);
+                authorities, user.getShoppingCart());
     }
 
     @Override

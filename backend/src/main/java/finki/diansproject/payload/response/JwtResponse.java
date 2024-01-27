@@ -1,5 +1,9 @@
 package finki.diansproject.payload.response;
 
+import finki.diansproject.models.ShoppingCart;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.List;
 
 public class JwtResponse {
@@ -10,11 +14,15 @@ public class JwtResponse {
     private String email;
     private List<String> roles;
 
-    public JwtResponse(String accessToken, String id, String username, String email, List<String> roles) {
+    @Getter
+    private String cartid;
+
+    public JwtResponse(String accessToken, String id, String username, String email, String cartid, List<String> roles) {
         this.token = accessToken;
         this.id = id;
         this.username = username;
         this.email = email;
+        this.cartid = cartid;
         this.roles = roles;
     }
 

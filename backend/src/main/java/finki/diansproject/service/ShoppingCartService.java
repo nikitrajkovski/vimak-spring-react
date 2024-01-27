@@ -52,4 +52,5 @@ public class ShoppingCartService {
         shoppingCart.getWines().clear();
         return shoppingCartRepository.save(shoppingCart);
     }
+
 }
