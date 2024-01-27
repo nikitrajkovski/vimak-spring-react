@@ -36,7 +36,7 @@ public class ShoppingCartService {
         shoppingCartRepository.save(shoppingCart);
         return this.getShoppingCartProducts(shoppingCartId);
     }
-    public ShoppingCart deleteItemFromShoppingCart(String shoppingCartId, ObjectId wineId) {
+    public ShoppingCart deleteItemFromShoppingCart(String shoppingCartId, String wineId) {
         ShoppingCart shoppingCart = shoppingCartRepository.findById(shoppingCartId)
                 .orElseThrow(() -> new ShoppingCartNotFoundException("ShoppingCart not found"));
 

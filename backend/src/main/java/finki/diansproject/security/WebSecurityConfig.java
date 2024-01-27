@@ -21,6 +21,8 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import finki.diansproject.security.jwt.AuthEntryPointJwt;
 import finki.diansproject.security.jwt.AuthTokenFilter;
 import finki.diansproject.security.services.UserDetailsServiceImpl;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 //@EnableWebSecurity
@@ -28,7 +30,7 @@ import finki.diansproject.security.services.UserDetailsServiceImpl;
 //(securedEnabled = true,
 //jsr250Enabled = true,
 //prePostEnabled = true) // by default
-public class WebSecurityConfig { // extends WebSecurityConfigurerAdapter {
+public class WebSecurityConfig implements WebMvcConfigurer { // extends WebSecurityConfigurerAdapter {
     @Autowired
     UserDetailsServiceImpl userDetailsService;
 
@@ -114,4 +116,11 @@ public class WebSecurityConfig { // extends WebSecurityConfigurerAdapter {
         return http.build();
     }
 
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**")
+                .allowedOrigins("http://localhost:3000")
+                .allowedMethods("GET", "POST", "PUT", "DELETE")
+                .allowCredentials(true);
+    }
 }

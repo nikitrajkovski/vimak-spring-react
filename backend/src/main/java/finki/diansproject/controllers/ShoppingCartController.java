@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
+@RestController
 @CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/api/v1/shopping-cart")
 public class ShoppingCartController {
@@ -31,7 +31,7 @@ public class ShoppingCartController {
         return new ResponseEntity<ShoppingCart>(shoppingCartService.addProductToShoppingCart(shoppingCartId,wineId), HttpStatus.OK);
     }
     @PostMapping("/delete-product/{shoppingCartId}/{wineId}")
-    public ResponseEntity<ShoppingCart> deleteProductInShoppingCart(@PathVariable String shoppingCartId,@PathVariable ObjectId wineId) {
+    public ResponseEntity<ShoppingCart> deleteProductInShoppingCart(@PathVariable String shoppingCartId,@PathVariable String wineId) {
 
         return new ResponseEntity<ShoppingCart>(shoppingCartService.deleteItemFromShoppingCart(shoppingCartId,wineId), HttpStatus.OK);
     }
