@@ -4,10 +4,13 @@ import './shoppingCart.css'
 import { useState, useEffect, useContext } from 'react';
 import api from '../../api/axiosConfig';
 import Navbar from "../hero/navbar";
+import {useNavigate} from 'react-router-dom'
+
 
 // axios call of shopping cart
 // add that inside component and products inherit inside productItem
 export default function ShoppingCart() {
+  const navigate = useNavigate()
   const [shoppingCartProducts, setShoppingCartProducts] = useState([]);
 
   const getShoppingCart = async () => {
@@ -40,6 +43,28 @@ export default function ShoppingCart() {
     }
   };
 
+  const handleContinueShopping = () => {
+    navigate('/wines');
+  }
+
+  const handleProceedCheckout = async () => {
+    if (shoppingCartProducts.length === 0) {
+      alert("Cannot proceed to checkout with an empty shopping cart.");
+      return;
+    }
+
+    try {
+      await api.post('/api/v1/shopping-cart/clear/659445cce9df798da9817616');
+      setShoppingCartProducts([]);
+      alert('Purchase was successful!');
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const totalItemPrice = shoppingCartProducts.reduce((total, product) => total + product.wine_price, 0);
+
+
   return (
     <div className="shopping-cart-component-wrapper-styling">
       <Navbar />
@@ -55,12 +80,10 @@ export default function ShoppingCart() {
             onDelete={handleProductDeleted} // Pass deletion handler
           />
         ))}
-        <ItemPrice name={'Subtotal'} price={4500} />
-        <div className="divider"></div>
-        <ItemPrice name={'Total'} price={4500} />
+        <ItemPrice name={'Total'} price={totalItemPrice} />
         <div className="buttons-wrapper">
-          <button className="button-styling">Proceed to checkout</button>
-          <button className="button-styling">Continue shopping</button>
+          <button className="button-styling" onClick={handleProceedCheckout}>Proceed to checkout</button>
+          <button  className="button-styling" onClick={handleContinueShopping}>Continue shopping</button>
         </div>
       </div>
     </div>

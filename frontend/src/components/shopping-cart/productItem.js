@@ -14,17 +14,17 @@ export default function ProductItem({ productId, name, price, type, winary, onDe
 
   const deleteProductFromCart = async (idtest) => {
     if (!authenticated) {
-      navigate('/login'); 
+      navigate('/login');
       return;
     } else {
-      const stringId = idtest.toString()
-      console.log(stringId)
-      await api.post(`/api/v1/shopping-cart/delete-product/659445cce9df798da9817616/${idtest}`)
-      onDelete(productId)
-      .catch(function (error) {
-          console.log(error);
-      });
-  }};
+      try {
+        await api.post(`/api/v1/shopping-cart/delete-product/659445cce9df798da9817616/${idtest}`);
+        onDelete(productId); // Notify ShoppingCart component about deletion
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  };
 
   return (
     <div className='product-item-wrapper'>
@@ -35,4 +35,3 @@ export default function ProductItem({ productId, name, price, type, winary, onDe
     </div>
   );
 }
-
