@@ -14,9 +14,7 @@ export default function Vinarija() {
     try {
       const response = await api.get("/api/v1/winery");
       setWinery(response.data);
-      console.log(response.data)
     } catch (err) {
-      console.log(err);
     }
   };
 

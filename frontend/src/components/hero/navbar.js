@@ -4,14 +4,9 @@ import Logo from './Logo.js'
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
-import { useNavigate } from 'react-router-dom';
-
 
 export default function Navbar() {
   const { authenticated, logout } = useAuth();
-
-  const navigate = useNavigate();
-
 
   return (
     <div className='navBar'>

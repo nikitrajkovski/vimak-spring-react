@@ -20,34 +20,15 @@ export default function Login() {
     const handleLoginSubmit = async (e) => {
         e.preventDefault();
     
-        console.log('Submitting with:', { username, password });
-
 
         try {
-            //made new changes
-            // const response = await axios.post(
-            //     LOGIN_URL,
-            //     { username, password },
-            //     {
-            //         headers: {
-            //             'Content-Type': 'application/json',
-            //         },
-            //         withCredentials: true,
-            //     }
-            // );
-    
-            // const accessToken = response.data.accessToken;
-            // sessionStorage.setItem('token', accessToken);
-            // sessionStorage.setItem('username', response.data.userName);
-            await login(username, password); // Pass username and password directly to the login function
+            await login(username, password);
             navigate('/');
             if (response.status === 200) {
                 login();
-                console.log('Login successful');
             }
         } catch (error) {
-            console.error('Login error:', error);
-            console.log('Invalid credentials');
+            
         }
     };
 
@@ -58,7 +39,7 @@ export default function Login() {
                 <div className="loginwindow">
                 <form onSubmit={(e) => handleLoginSubmit(e)} className="login-form">                        
                 <div className="form-group">
-                        <label htmlFor="username">Username</label>
+                        <label htmlFor="username">Корисничко име</label>
                         <input
                             type="text"
                             id="username"
@@ -66,12 +47,12 @@ export default function Login() {
                             onChange={(e) =>{
                                 setUsername(e.target.value)}
                             } 
-                            placeholder="Enter your username"
+                            placeholder="Внесете го вашето корисничко име"
                             required
                         />
                         </div>
                         <div className="form-group">
-                        <label htmlFor="password">Password</label>
+                        <label htmlFor="password">Лозинка</label>
                         <input
                             type="password"
                             id="password"
@@ -79,11 +60,11 @@ export default function Login() {
                             onChange={(e) => {
                                 setPassword(e.target.value)}
                             }
-                            placeholder="Enter your password"
+                            placeholder="Внесете ја вашата лозинка"
                             required
                         />
                         </div>
-                        <button type="submit" className="btn formButton">Login</button>
+                        <button type="submit" className="btn formButton">Најава</button>
                     </form>
                 </div>
 

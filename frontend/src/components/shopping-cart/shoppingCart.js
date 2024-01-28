@@ -7,8 +7,6 @@ import Navbar from "../hero/navbar";
 import {useNavigate} from 'react-router-dom'
 
 
-// axios call of shopping cart
-// add that inside component and products inherit inside productItem
 export default function ShoppingCart() {
   const navigate = useNavigate();
   const cartid = localStorage.getItem("cartid");
@@ -55,14 +53,14 @@ export default function ShoppingCart() {
 
   const handleProceedCheckout = async () => {
     if (shoppingCartProducts.length === 0) {
-      alert("Cannot proceed to checkout with an empty shopping cart.");
+      alert("Не можете да продолжите со празна корпа");
       return;
     }
 
     try {
       await api.post(`/api/v1/shopping-cart/clear/${cartid}`);
       setShoppingCartProducts([]);
-      alert('Purchase was successful!');
+      alert('Купувањето е успешно');
     } catch (error) {
       console.log(error);
     }
@@ -89,10 +87,10 @@ export default function ShoppingCart() {
             onCounterChange={handleCounterChange} // Pass counter change handler
           />
         ))}
-        <ItemPrice name={'Total'} price={totalItemPrice} />
+        <ItemPrice name={'Вкупно'} price={totalItemPrice} />
         <div className="buttons-wrapper">
-          <button className="button-styling" onClick={handleProceedCheckout}>Proceed to checkout</button>
-          <button  className="button-styling" onClick={handleContinueShopping}>Continue shopping</button>
+          <button className="button-styling" onClick={handleProceedCheckout}>Продолжете кон наплата</button>
+          <button  className="button-styling" onClick={handleContinueShopping}>Продолжете со купување</button>
         </div>
       </div>
     </div>

@@ -12,7 +12,6 @@ export const AuthProvider = ({ children }) => {
 
     const login = async (username, password) => {
         try {
-            console.log('Sending request with:', { username, password });
             const response = await axios.post(
                 'http://localhost:8090/api/auth/signin',
                 { username, password },
@@ -24,16 +23,12 @@ export const AuthProvider = ({ children }) => {
 
             if (accessToken) {
                 setAuthenticated(true);
-                console.log(response.data)
                 localStorage.setItem('accessToken', accessToken);
                 localStorage.setItem('cartid', cartid);
-                console.log(response.data.cartid)
             } else {
                 throw new Error('Invalid credentials');
             }
         } catch (error) {
-            console.error('Login error:', error.response || error);
-            console.error('Login error:', error);
             throw error; // Rethrow the error to be caught by the calling component
         }
     };

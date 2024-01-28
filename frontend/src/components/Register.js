@@ -52,39 +52,39 @@ export default function Logout() {
                 <div class="container1">
                     <form onSubmit={handleRegisterSubmit} class="login-form">
                         <div class="form-group">
-                        <label for="username">Username</label>
+                        <label for="username">Корисничко име</label>
                         <input
                             type="text"
                             id="username"
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
-                            placeholder="Enter your username"
+                            placeholder="Внесете го вашето корисничко име"
                             required
                         />
                         </div>
                         <div class="form-group">
-                        <label for="email">Email</label>
+                        <label for="email">Електронска пошта</label>
                         <input
                             type="text"
                             id="email"
                             value={email}
                             onChange={(e) => SetEmail(e.target.value)}
-                            placeholder="Enter your email"
+                            placeholder="Внесете ја вашата електронска пошта"
                             required
                         />
                         </div>
                         <div class="form-group">
-                        <label for="password">Password</label>
+                        <label for="password">Лозинка</label>
                         <input
                             type="password"
                             id="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
-                            placeholder="Enter your password"
+                            placeholder="Внесете ја лозинката"
                             required
                         />
                         </div>
-                        <button type="submit" class="btn formButton">Register</button>
+                        <button type="submit" class="btn formButton">Регистрација</button>
                     </form>
                     
                 </div>

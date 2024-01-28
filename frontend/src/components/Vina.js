@@ -18,14 +18,10 @@ export default function Vina() {
       navigate('/login'); 
       return;
     } else {
-        console.log(idtest)
         const stringId = idtest.toString(); // Convert ObjectId to String
-        console.log(stringId)
         const cartid = localStorage.getItem("cartid")
-        console.log(cartid)
         api.post(`/api/v1/shopping-cart/add-product/${cartid}/${stringId}`)
         .then(function (response) {
-            console.log(response);
             alert("Успешно додадовте вино во корпата")
         })
         .catch(function (error) {
@@ -41,7 +37,6 @@ export default function Vina() {
       const response = await api.get("/api/v1/wines");
       setWines(response.data);
     } catch (err) {
-      console.log(err);
     }
   };
 

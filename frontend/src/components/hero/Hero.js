@@ -64,7 +64,7 @@ const Hero = ({ wines }) => {
           },
           (error) => {
             console.error("Error getting user location:", error);
-            setLoadingLocation(false); // Set loading to false in case of error
+            setLoadingLocation(false); 
           }
         );
       }
