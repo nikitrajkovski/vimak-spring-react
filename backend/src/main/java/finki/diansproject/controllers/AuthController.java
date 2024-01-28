@@ -37,9 +37,7 @@ import finki.diansproject.repository.UserRepository;
 import finki.diansproject.security.jwt.JwtUtils;
 import finki.diansproject.security.services.UserDetailsImpl;
 
-//for Angular Client (withCredentials)
 @CrossOrigin(origins = "http://localhost:3000", maxAge = 3600, allowCredentials="true")
-//@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
@@ -64,7 +62,6 @@ public class AuthController {
 
 
     @PostMapping("/signin")
-//    @CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true")
     public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
 
         Authentication authentication = authenticationManager.authenticate(
@@ -94,7 +91,6 @@ public class AuthController {
     }
 
     @PostMapping("/signup")
-//    @CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true")
     public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
         if (userRepository.existsByUsername(signUpRequest.getUsername())) {
             return ResponseEntity
