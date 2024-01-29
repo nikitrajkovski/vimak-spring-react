@@ -144,13 +144,15 @@ const calculateDistance = (from, to) => {
                 <div className="delzamapa">
                   <APIProvider apiKey={'AIzaSyAu016zEmkbzV4rr-L_VFVKvUc2CLBE-t4'}>
                       <Map center={position} zoom={9} style={{width: '900px', height:'600px'}} mapId="7d2c71925b05302f">
-                      <AdvancedMarker position={userLocation}>
-                          <Pin
-                            background={"blue"}
-                            borderColor={"blue"}
-                            glyphColor={"blue"}
-                          />
-                        </AdvancedMarker>
+                        {userLocation && (
+                          <AdvancedMarker position={userLocation}>
+                            <Pin
+                                background={"blue"}
+                                borderColor={"blue"}
+                                glyphColor={"blue"}
+                              />
+                            </AdvancedMarker>
+                          )}
                         <AdvancedMarker position={tikves} onClick={()=>fetchVine('656cd487b5000e83e49308be', tikves)}>
                           <Pin
                             background={"red"}
